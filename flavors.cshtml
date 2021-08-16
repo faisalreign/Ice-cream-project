@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ICECREAMPROJECT.Models.tbl_flavors>
+@{
+    ViewBag.Title = "flavors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>flavors</h2>
+<div class="row" style="height:auto">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <img src="@Url.Content(item.fl_image)" class="img-thumbnail img-responsive" style="width:100%;height:200px" />
+
+            <h1>@item.fl_name</h1>
+        </div>
+    }
+</div>
+

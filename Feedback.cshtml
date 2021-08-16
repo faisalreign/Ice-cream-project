@@ -1,0 +1,96 @@
+﻿@model IEnumerable<ICECREAMPROJECT.Models.tbl_feedback>
+
+@{
+    ViewBag.Title = "Feedback";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<h2>Feedback</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.f_text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.f_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.f_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.f_contact)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.f_text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.f_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.f_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.f_contact)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.f_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.f_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.f_id })
+        </td>
+    </tr>
+}
+
+</table>
+
+<!-- Contact -->
+<div class="agiilecontactw3layouts" id="agiilecontactw3layouts">
+    <div class="container">
+
+        <h3 class="h3-1">Get In Touch!</h3>
+        <h3 class="h3-2">It's Easy...</h3>
+
+        <div class="col-md-6 col-sm-6 agiilecontactw3layouts-grid agiilecontactw3layouts-grid-1">
+            <div class="agiilew3layoutscontact-grid">
+                <form action="#" method="post">
+                    <input type="text" class="text" name="Name" placeholder="YOUR NAME" required="">
+                    <input type="text" class="text email" name="Email" placeholder="YOUR EMAIL" required="">
+                    <textarea name="Message" placeholder="MESSAGE" required=""></textarea>
+                    <input type="submit" class="more_btn" value="SEND MESSAGE">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 agiilecontactw3layouts-grid agiilecontactw3layouts-grid-2">
+            <div class="agiilew3layoutsconnect-social">
+                <h3><span>Follow Us!</span> It's Fun...</h3>
+                <ul>
+                    <li><a href="#" class="facebook" title="Go to Our Facebook Page"></a></li>
+                    <li><a href="#" class="twitter" title="Go to Our Twitter Account"></a></li>
+                    <li><a href="#" class="googleplus" title="Go to Our Google Plus Account"></a></li>
+                    <li><a href="#" class="linkedin" title="Go to Our Linkedin Page"></a></li>
+                    <li><a href="#" class="tumblr" title="Go to Our Tumblr Page"></a></li>
+                    <li><a href="#" class="youtube" title="Go to Our Youtube Channel"></a></li>
+                    <li><a href="#" class="vimeo" title="Go to Our Vimeo Channel"></a></li>
+                </ul>
+            </div>
+            <p>Subscribe to our newsletter and we will inform you about newest projects and promotions.</p>
+            <div class="newsletter">
+                <form action="#" method="post">
+                    <input class="email" type="email" name="Email" placeholder="EMAIL" required="">
+                    <input type="submit" class="submit" value="SUBSCRIBE">
+                </form>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+<!-- //Contact -->
